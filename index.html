@@ -2,489 +2,855 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080b14">
-<meta name="description" content="AJIT WALLPAPER - शानदार HD और 4K वॉलपेपर देखें और डाउनलोड करें।">
-<meta name="robots" content="index,follow">
-<title>AJIT WALLPAPER | HD Wallpapers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="AJIT WALLPAPER - Discover wallpapers for every mood.">
+<title>AJIT WALLPAPER | Discover Beyond</title>
 
 <style>
-*{box-sizing:border-box}
 :root{
-  --bg:#080b14;
-  --panel:#111827;
-  --blue:#168cff;
+  --bg:#050914;
+  --panel:#0b1425;
+  --panel2:#101d32;
+  --blue:#168bff;
   --cyan:#00eaff;
-  --text:#f5f8ff;
-  --muted:#9caac1;
+  --text:#f4f8ff;
+  --muted:#9aacc5;
+  --border:rgba(0,234,255,.17);
+  --shadow:0 10px 35px rgba(0,0,0,.28);
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
+  background:
+    radial-gradient(ellipse at 5% 0%,rgba(0,119,255,.13),transparent 36%),
+    radial-gradient(ellipse at 95% 15%,rgba(0,234,255,.07),transparent 30%),
+    var(--bg);
   color:var(--text);
-  font-family:Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
 }
-header{
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.topbar{
   position:sticky;
   top:0;
-  z-index:10;
-  background:rgba(8,11,20,.94);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid #202b40;
+  z-index:20;
+  background:rgba(5,9,20,.91);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
 }
 .nav{
-  max-width:1200px;
+  max-width:1500px;
   margin:auto;
-  padding:16px;
+  padding:13px 20px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:12px;
+  gap:18px;
 }
 .logo{
-  font-size:21px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-.logo span{color:var(--cyan)}
-.badge{
-  color:var(--cyan);
-  border:1px solid #087fba;
-  padding:7px 11px;
-  border-radius:20px;
-  font-size:11px;
-}
-.hero{
-  text-align:center;
-  padding:54px 16px 30px;
-  background:
-    radial-gradient(ellipse at top,#102c51 0%,transparent 65%);
-}
-.hero h1{
-  font-size:clamp(30px,7vw,54px);
-  margin:0 0 12px;
-  line-height:1.15;
-}
-.hero h1 span{
-  background:linear-gradient(90deg,#168cff,#00eaff);
-  color:transparent;
-  background-clip:text;
-}
-.hero p{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.7;
-  max-width:500px;
-  margin:0 auto 25px;
-}
-.search{
-  display:flex;
-  max-width:570px;
-  margin:auto;
-  background:#111827;
-  border:1px solid #293b56;
-  border-radius:14px;
-  padding:5px;
-}
-.search input{
-  flex:1;
-  min-width:0;
-  background:transparent;
-  border:0;
-  outline:none;
-  color:white;
-  font-size:15px;
-  padding:12px;
-}
-.search button,.upload-btn{
-  background:linear-gradient(135deg,#168cff,#0065df);
-  color:white;
-  border:0;
-  padding:12px 17px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-main{
-  max-width:1200px;
-  margin:auto;
-  padding:20px 15px 45px;
-}
-.section-head{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:12px;
-  margin:20px 0;
+  gap:10px;
+  flex-shrink:0;
 }
-.section-head h2{
+.logo-icon{
+  width:43px;
+  height:43px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#0878ff,#00eaff);
+  color:#00101d;
+  font-size:19px;
+  font-weight:1000;
+  box-shadow:0 0 24px rgba(0,234,255,.25);
+}
+.logo-name{
+  font-size:18px;
+  font-weight:1000;
+  letter-spacing:1px;
+}
+.logo-name span{color:var(--cyan)}
+.tagline{
+  display:block;
+  font-size:10px;
+  color:var(--muted);
+  margin-top:4px;
+  letter-spacing:1.5px;
+}
+.searchbox{
+  flex:1;
+  display:flex;
+  align-items:center;
+  min-width:0;
+  max-width:700px;
+  margin:auto;
+  background:#101a2b;
+  border:1px solid #243b56;
+  border-radius:15px;
+  overflow:hidden;
+  transition:.2s;
+}
+.searchbox:focus-within{
+  border-color:var(--cyan);
+  box-shadow:0 0 0 3px rgba(0,234,255,.08);
+}
+.searchbox input{
+  width:100%;
+  min-width:0;
+  padding:14px 15px;
+  color:white;
+  background:transparent;
+  border:0;
+  outline:0;
+}
+.searchbox input::placeholder{color:#91a2b9}
+.search-btn{
+  border:0;
+  background:linear-gradient(135deg,#0878ff,#00cfff);
+  color:#00101b;
+  padding:14px 18px;
+  font-weight:900;
+}
+.upload-btn{
+  flex-shrink:0;
+  border:1px solid var(--border);
+  background:#0c1b2e;
+  color:var(--cyan);
+  padding:12px 15px;
+  border-radius:13px;
+  font-weight:800;
+}
+.upload-btn:hover,.category:hover{border-color:var(--cyan)}
+.hero{
+  max-width:1500px;
+  margin:30px auto 22px;
+  padding:0 20px;
+}
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:38px 32px;
+  background:
+    radial-gradient(ellipse at 80% 10%,rgba(0,234,255,.15),transparent 40%),
+    linear-gradient(120deg,#0b1730,#080d1b 65%,#071a2a);
+  box-shadow:var(--shadow);
+}
+.hero-card:after{
+  content:"AW";
+  position:absolute;
+  right:25px;
+  top:0;
+  font-size:clamp(100px,20vw,230px);
+  font-weight:1000;
+  color:rgba(0,234,255,.035);
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-block;
+  color:var(--cyan);
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:7px 12px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+h1{
+  font-size:clamp(30px,5vw,57px);
+  line-height:1.08;
+  margin:18px 0 12px;
+  letter-spacing:-1.5px;
+}
+h1 span{
+  color:var(--cyan);
+  text-shadow:0 0 25px rgba(0,234,255,.2);
+}
+.hero p{
+  max-width:600px;
+  color:var(--muted);
+  line-height:1.7;
   margin:0;
-  font-size:22px;
 }
-.count{font-size:12px;color:var(--muted)}
+.hero-stats{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+.stat{
+  padding:10px 13px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(7,15,30,.7);
+  font-size:12px;
+  color:#dcecff;
+}
+.section{
+  max-width:1500px;
+  padding:0 20px;
+  margin:26px auto;
+}
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+.section-heading h2{
+  margin:0;
+  font-size:21px;
+}
+.section-heading p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
 .categories{
   display:flex;
   gap:9px;
   overflow-x:auto;
-  padding:4px 0 15px;
-  scrollbar-width:none;
+  padding:3px 0 12px;
+  scrollbar-width:thin;
 }
-.categories button{
+.category{
   flex-shrink:0;
-  padding:10px 16px;
-  border-radius:25px;
-  background:#111827;
-  border:1px solid #27344a;
-  color:#cbd5e1;
-  cursor:pointer;
+  border:1px solid #1d304a;
+  background:#0c1627;
+  color:#d9e9ff;
+  padding:11px 15px;
+  border-radius:12px;
+  white-space:nowrap;
+  font-size:13px;
+  font-weight:700;
 }
-.categories button.active{
-  color:white;
-  background:#0759a8;
-  border-color:#168cff;
+.category.active{
+  background:linear-gradient(135deg,#0878ff,#00cfff);
+  border-color:transparent;
+  color:#00101b;
 }
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
+.toolbar{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  flex-wrap:wrap;
+}
+.small-btn{
+  border:1px solid #243750;
+  border-radius:10px;
+  padding:9px 12px;
+  background:#0c1627;
+  color:#dcecff;
+  font-size:12px;
+  font-weight:700;
+}
+.small-btn.active{
+  color:var(--cyan);
+  border-color:var(--cyan);
+}
+#status{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+  margin:10px 0 16px;
+}
+#gallery{
+  columns:5 190px;
+  column-gap:15px;
 }
 .card{
-  background:var(--panel);
-  border:1px solid #202b40;
-  border-radius:15px;
+  display:inline-block;
+  width:100%;
+  margin:0 0 15px;
   overflow:hidden;
-  min-width:0;
+  break-inside:avoid;
+  background:linear-gradient(145deg,#101d31,#091221);
+  border:1px solid rgba(119,174,230,.12);
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,.16);
   transition:transform .2s,border-color .2s;
 }
 .card:hover{
   transform:translateY(-3px);
-  border-color:#168cff;
+  border-color:rgba(0,234,255,.5);
+}
+.image-wrap{
+  position:relative;
+  background:#101b2b;
+  overflow:hidden;
+  min-height:100px;
 }
 .wallpaper{
-  width:100%;
-  aspect-ratio:3/4;
   display:block;
+  width:100%;
+  height:auto;
+  min-height:100px;
   object-fit:cover;
-  background:#101827;
+  color:#a9c4e0;
+  font-size:12px;
+}
+.card-actions{
+  position:absolute;
+  top:9px;
+  right:9px;
+  display:flex;
+  gap:6px;
+}
+.icon-btn{
+  width:36px;
+  height:36px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:11px;
+  background:rgba(3,8,17,.8);
+  color:white;
+  font-size:17px;
+  display:grid;
+  place-items:center;
+  backdrop-filter:blur(8px);
+}
+.icon-btn.saved{
+  background:#0878ff;
+  color:white;
+  border-color:#00eaff;
 }
 .card-info{padding:11px}
-.card-info h3{
-  margin:0 0 5px;
-  font-size:14px;
-}
-.card-info p{
-  margin:0 0 12px;
-  color:var(--muted);
-  font-size:11px;
-}
-.download{
-  display:block;
-  text-align:center;
-  background:#102c4b;
-  color:#64caff;
-  border:1px solid #145b91;
-  text-decoration:none;
-  border-radius:9px;
-  padding:10px 5px;
-  font-size:12px;
-  font-weight:bold;
-}
-.download:hover{background:#164776}
-.empty{
-  display:none;
-  text-align:center;
-  color:var(--muted);
-  padding:45px 10px;
-}
-.upload-panel{
-  background:linear-gradient(135deg,#101f37,#0c1322);
-  border:1px solid #24466d;
-  border-radius:18px;
-  padding:23px 17px;
-  margin-top:35px;
-}
-.upload-panel h2{margin-top:0}
-.upload-panel p{
-  color:var(--muted);
+.card-title{
   font-size:13px;
-  line-height:1.7;
+  line-height:1.45;
+  font-weight:800;
+  overflow-wrap:anywhere;
 }
-.upload-btn{display:inline-block}
-#fileInput{display:none}
-#uploadStatus{font-size:12px;color:var(--cyan)}
-.notice{
-  color:#9caac1;
-  font-size:12px;
-  line-height:1.7;
-  margin-top:14px;
+.card-sub{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:6px;
+  line-height:1.5;
 }
-footer{
+.card-footer{
+  display:flex;
+  gap:7px;
+  margin-top:10px;
+}
+.card-footer a,.card-footer button{
+  flex:1;
   text-align:center;
-  padding:25px 15px;
-  color:#8794aa;
-  border-top:1px solid #202b40;
+  text-decoration:none;
+  border:1px solid #233852;
+  border-radius:9px;
+  background:#0b192b;
+  color:#dff7ff;
+  padding:8px 4px;
+  font-size:11px;
+  font-weight:800;
+}
+.card-footer .download{
+  background:linear-gradient(135deg,#0878ff,#00cfff);
+  border:0;
+  color:#00101b;
+}
+#loadMore{
+  display:block;
+  margin:20px auto 10px;
+  padding:14px 24px;
+  background:linear-gradient(135deg,#0878ff,#00d5ff);
+  color:#00101b;
+  border:0;
+  border-radius:13px;
+  font-weight:900;
+  min-width:180px;
+}
+#loadMore:disabled{opacity:.5;cursor:wait}
+.empty{
+  border:1px dashed #29435d;
+  border-radius:18px;
+  padding:35px 18px;
+  color:var(--muted);
+  text-align:center;
+  margin-bottom:18px;
+}
+.notice{
+  background:#0c1b2b;
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:#bcd0e8;
+  padding:13px;
   font-size:12px;
+  line-height:1.7;
+  margin:15px 0;
 }
-footer strong{color:var(--cyan)}
-@media(min-width:600px){
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .hero{padding-top:75px}
+.footer{
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:25px 15px 35px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
 }
-@media(min-width:900px){
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+#toast{
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translate(-50%,20px);
+  opacity:0;
+  pointer-events:none;
+  z-index:100;
+  max-width:90%;
+  background:#10253a;
+  color:#eafaff;
+  border:1px solid var(--cyan);
+  border-radius:12px;
+  padding:12px 16px;
+  font-size:13px;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+#toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+#fileInput{display:none}
+@media(max-width:800px){
+  .nav{gap:10px;padding:11px 12px;flex-wrap:wrap}
+  .logo{flex:1}
+  .logo-name{font-size:15px}
+  .logo-icon{width:38px;height:38px}
+  .searchbox{order:3;flex-basis:100%;max-width:none}
+  .upload-btn{padding:10px;font-size:12px}
+  .hero{margin-top:17px;padding:0 12px}
+  .hero-card{padding:27px 20px;border-radius:20px}
+  .section{padding:0 12px;margin:23px auto}
+  #gallery{columns:2 140px;column-gap:10px}
+  .card{margin-bottom:10px;border-radius:13px}
+  .card-info{padding:9px}
+  .card-title{font-size:12px}
+  .icon-btn{width:32px;height:32px}
+}
+@media(min-width:1200px){
+  #gallery{columns:5 210px}
+}
+@media(min-width:1600px){
+  #gallery{columns:6 210px}
 }
 </style>
 </head>
 
 <body>
-
-<header>
+<header class="topbar">
   <div class="nav">
-    <div class="logo">AJIT <span>WALLPAPER</span></div>
-    <div class="badge">HD • 4K WALLPAPERS</div>
+    <div class="logo">
+      <div class="logo-icon">AW</div>
+      <div>
+        <div class="logo-name">AJIT <span>WALLPAPER</span></div>
+        <span class="tagline">DISCOVER YOUR NEXT WALLPAPER</span>
+      </div>
+    </div>
+
+    <form class="searchbox" id="searchForm">
+      <input id="searchInput"
+        type="search"
+        placeholder="कार, भगवान, रेलवे, प्रकृति खोजें..."
+        autocomplete="off"
+        aria-label="वॉलपेपर खोजें">
+      <button class="search-btn" type="submit">खोजें</button>
+    </form>
+
+    <button class="upload-btn" id="uploadBtn">＋ अपनी फोटो</button>
+    <input id="fileInput" type="file" accept="image/*" multiple>
   </div>
 </header>
 
-<section class="hero">
-  <h1>Your Screen,<br><span>Your Style.</span></h1>
-  <p>अपने मोबाइल की स्क्रीन को शानदार बनाओ। अपनी पसंद के वॉलपेपर खोजो और डाउनलोड करो।</p>
-
-  <div class="search">
-    <input id="searchInput" type="search"
-      placeholder="वॉलपेपर खोजें..."
-      aria-label="वॉलपेपर खोजें">
-    <button id="searchBtn">खोजें</button>
-  </div>
-</section>
-
 <main>
-  <div class="section-head">
-    <h2>Explore Wallpapers</h2>
-    <span class="count" id="count">वॉलपेपर</span>
-  </div>
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">✦ YOUR WALLPAPER UNIVERSE</span>
+      <h1>Discover Beyond.<br><span>Make It Yours.</span></h1>
+      <p>
+        अपनी पसंद की तस्वीरें खोजो, वॉलपेपर डाउनलोड करो और
+        अपनी पसंदीदा तस्वीरों का कलेक्शन बनाओ।
+      </p>
+      <div class="hero-stats">
+        <div class="stat">⚡ ऑनलाइन इमेज सर्च</div>
+        <div class="stat">💙 Favorites</div>
+        <div class="stat">📱 मोबाइल फ्रेंडली</div>
+        <div class="stat">⬇️ डाउनलोड</div>
+      </div>
+    </div>
+  </section>
 
-  <div class="categories" id="categories">
-    <button class="active" data-cat="All">All</button>
-    <button data-cat="Nature">Nature</button>
-    <button data-cat="Anime">Anime</button>
-    <button data-cat="Cars">Cars</button>
-    <button data-cat="Space">Space</button>
-    <button data-cat="Abstract">Abstract</button>
-    <button data-cat="My Uploads">My Uploads</button>
-  </div>
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2>Explore Categories</h2>
+        <p>अपनी पसंद की कैटेगरी चुनो</p>
+      </div>
+    </div>
 
-  <div class="grid" id="wallpaperGrid"></div>
-  <div class="empty" id="empty">कोई वॉलपेपर नहीं मिला। दूसरा नाम खोजें।</div>
+    <div class="categories" id="categories">
+      <button class="category active" data-query="beautiful wallpaper">✨ सभी</button>
+      <button class="category" data-query="Hindu temple architecture">🛕 मंदिर</button>
+      <button class="category" data-query="Hindu deity statue">🙏 भगवान</button>
+      <button class="category" data-query="sports car">🏎️ कार</button>
+      <button class="category" data-query="motorcycle">🏍️ बाइक</button>
+      <button class="category" data-query="Indian national flag">🇮🇳 भारतीय झंडा</button>
+      <button class="category" data-query="Indian railway train">🚆 भारतीय रेलवे</button>
+      <button class="category" data-query="mountains nature landscape">🏔️ प्रकृति</button>
+      <button class="category" data-query="space nebula galaxy">🌌 अंतरिक्ष</button>
+      <button class="category" data-query="cute cat">🐈 जानवर</button>
+      <button class="category" data-query="flowers macro photography">🌸 फूल</button>
+      <button class="category" data-query="city night architecture">🌃 शहर</button>
+      <button class="category" data-query="minimal abstract art">🎨 Abstract</button>
+      <button class="category" data-query="Indian cricket stadium">🏏 क्रिकेट</button>
+    </div>
+  </section>
 
-  <section class="upload-panel">
-    <h2>📤 अपने वॉलपेपर जोड़ें</h2>
-    <p>
-      अपने मोबाइल या लैपटॉप से फोटो चुनकर इस ब्राउज़र में जोड़ सकते हो।
-      ये फोटो फिलहाल केवल इसी ब्राउज़र में सेव रहेंगे।
-    </p>
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <h2 id="galleryTitle">✨ Discover Wallpapers</h2>
+        <p>तस्वीरें ऑनलाइन स्रोत से खोजी जाती हैं।</p>
+      </div>
+      <div class="toolbar">
+        <button class="small-btn" id="allBtn">सभी फोटो</button>
+        <button class="small-btn" id="favoritesBtn">♥ Favorites</button>
+        <button class="small-btn" id="myPhotosBtn">🖼️ मेरी फोटो</button>
+      </div>
+    </div>
 
-    <label class="upload-btn" for="fileInput">＋ फोटो चुनें</label>
-    <input id="fileInput" type="file" accept="image/*" multiple>
-    <p id="uploadStatus" aria-live="polite"></p>
+    <div id="status" role="status" aria-live="polite">
+      वॉलपेपर लोड हो रहे हैं...
+    </div>
+
+    <div id="gallery"></div>
+    <div id="emptyState" class="empty" hidden>
+      यहाँ अभी कोई तस्वीर नहीं है। दूसरी कैटेगरी या सर्च आज़माओ।
+    </div>
+
+    <button id="loadMore">और तस्वीरें लोड करें ↓</button>
 
     <div class="notice">
-      ध्यान दें: इस बटन से अपलोड की गई फोटो अपने-आप सार्वजनिक वेबसाइट पर नहीं जातीं।
-      सभी विज़िटर्स को अपने वॉलपेपर दिखाने के लिए फोटो को GitHub repository में जोड़ना होगा।
+      <b>ध्यान दें:</b> यह वेबसाइट Wikimedia Commons से तस्वीरें खोजती है।
+      हर तस्वीर की लाइसेंस शर्तें अलग हो सकती हैं। डाउनलोड या दोबारा इस्तेमाल
+      करने से पहले स्रोत और लाइसेंस जाँचें। तस्वीरों की उपलब्धता इंटरनेट पर निर्भर है।
     </div>
   </section>
 </main>
 
-<footer>
-  <strong>AJIT WALLPAPER</strong><br><br>
-  Made with ❤️ by Ajit<br>
-  © <span id="year"></span> AJIT WALLPAPER
+<footer class="footer">
+  <b>AJIT WALLPAPER</b><br>
+  Explore • Discover • Save<br>
+  Made with ⚡ for wallpaper lovers
 </footer>
 
+<div id="toast"></div>
+
 <script>
-const initialWallpapers = [
-  {
-    title:"Mountain Escape",
-    category:"Nature",
-    image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Green Forest",
-    category:"Nature",
-    image:"https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Ocean Blue",
-    category:"Nature",
-    image:"https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Night Sky",
-    category:"Space",
-    image:"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Cosmic Universe",
-    category:"Space",
-    image:"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Sports Car",
-    category:"Cars",
-    image:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Supercar",
-    category:"Cars",
-    image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=85"
-  },
-  {
-    title:"Abstract Colors",
-    category:"Abstract",
-    image:"https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=85"
-  }
-];
+"use strict";
 
-let wallpapers = [...initialWallpapers];
-let selectedCategory = "All";
+/* ==========================================
+   AJIT WALLPAPER
+   Pinterest-style image discovery website
+   Online image source: Wikimedia Commons API
+========================================== */
 
-const grid = document.getElementById("wallpaperGrid");
+const API = "https://commons.wikimedia.org/w/api.php";
+
+const gallery = document.getElementById("gallery");
+const statusBox = document.getElementById("status");
+const emptyState = document.getElementById("emptyState");
 const searchInput = document.getElementById("searchInput");
-const empty = document.getElementById("empty");
-const count = document.getElementById("count");
+const loadMoreBtn = document.getElementById("loadMore");
+const galleryTitle = document.getElementById("galleryTitle");
 
-function makeCard(w, index) {
+let currentQuery = "beautiful wallpaper";
+let nextContinuation = null;
+let loading = false;
+let viewMode = "all";
+let currentResults = [];
+let userPhotos = [];
+let requestNumber = 0;
+
+const seenIds = new Set();
+
+let favorites = new Set();
+try {
+  favorites = new Set(
+    JSON.parse(localStorage.getItem("ajitWallpaperFavorites") || "[]")
+  );
+} catch (error) {
+  favorites = new Set();
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(showToast.timer);
+  showToast.timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2600);
+}
+
+function saveFavorites() {
+  try {
+    localStorage.setItem(
+      "ajitWallpaperFavorites",
+      JSON.stringify([...favorites])
+    );
+  } catch (error) {
+    showToast("ब्राउज़र में सेव करने की जगह उपलब्ध नहीं है।");
+  }
+}
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
+  })[char]);
+}
+
+function cleanTitle(value) {
+  return String(value || "Untitled wallpaper")
+    .replace(/File:/i, "")
+    .replace(/_/g, " ")
+    .replace(/\.(jpg|jpeg|png|webp|gif|svg)$/i, "");
+}
+
+function makeSearchUrl(query, continuation) {
+  const params = new URLSearchParams({
+    action: "query",
+    generator: "search",
+    gsrsearch: query + " filetype:bitmap",
+    gsrnamespace: "6",
+    gsrlimit: "50",
+    prop: "imageinfo",
+    iiprop: "url|extmetadata",
+    iiurlwidth: "650",
+    format: "json",
+    origin: "*"
+  });
+
+  if (continuation) {
+    Object.entries(continuation).forEach(([key, value]) => {
+      params.set(key, value);
+    });
+  }
+
+  return API + "?" + params.toString();
+}
+
+function extractLicense(page) {
+  const meta = page.imageinfo?.[0]?.extmetadata || {};
+  const license = meta.LicenseShortName?.value || "";
+  const artist = meta.Artist?.value || "";
+  const credit = String(artist).replace(/<[^>]*>/g, "").trim();
+
+  return {
+    license: license || "लाइसेंस जाँचें",
+    credit: credit || "Wikimedia Commons"
+  };
+}
+
+function normalizePage(page) {
+  const info = page.imageinfo?.[0];
+  if (!info) return null;
+
+  const thumb = info.thumburl || info.url;
+  const full = info.url;
+
+  if (!thumb || !full) return null;
+
+  const license = extractLicense(page);
+
+  return {
+    id: "commons-" + page.pageid,
+    title: cleanTitle(page.title),
+    thumb,
+    full,
+    pageUrl: "https://commons.wikimedia.org/wiki/" +
+      encodeURIComponent(page.title.replace(/ /g, "_")),
+    license: license.license,
+    credit: license.credit,
+    source: "commons"
+  };
+}
+
+function setStatus(message) {
+  statusBox.textContent = message;
+}
+
+function updateEmptyState() {
+  emptyState.hidden = gallery.children.length > 0;
+}
+
+function setMode(mode) {
+  viewMode = mode;
+
+  document.getElementById("allBtn").classList.toggle("active", mode === "all");
+  document.getElementById("favoritesBtn").classList.toggle("active", mode === "favorites");
+  document.getElementById("myPhotosBtn").classList.toggle("active", mode === "mine");
+
+  if (mode === "all") {
+    galleryTitle.textContent = "✨ Discover Wallpapers";
+    renderAllResults();
+  } else if (mode === "favorites") {
+    galleryTitle.textContent = "♥ Saved Wallpapers";
+    renderFavorites();
+  } else {
+    galleryTitle.textContent = "🖼️ मेरी तस्वीरें";
+    renderMyPhotos();
+  }
+
+  updateEmptyState();
+}
+
+function makeCard(item) {
   const card = document.createElement("article");
   card.className = "card";
+  card.dataset.id = item.id;
 
-  const img = document.createElement("img");
-  img.className = "wallpaper";
-  img.src = w.image;
-  img.alt = w.title;
-  img.loading = "lazy";
+  const isSaved = favorites.has(item.id);
 
-  img.onerror = () => {
-    img.alt = "फोटो लोड नहीं हो सकी";
-  };
+  const title = escapeHTML(item.title);
+  const thumb = escapeHTML(item.thumb);
+  const full = escapeHTML(item.full);
+  const pageUrl = escapeHTML(item.pageUrl || item.full);
 
-  const info = document.createElement("div");
-  info.className = "card-info";
+  card.innerHTML = `
+    <div class="image-wrap">
+      <img
+        class="wallpaper"
+        src="${thumb}"
+        alt="${title}"
+        loading="lazy"
+        decoding="async"
+      >
 
-  const title = document.createElement("h3");
-  title.textContent = w.title;
+      <div class="card-actions">
+        <button
+          class="icon-btn favorite-btn ${isSaved ? "saved" : ""}"
+          type="button"
+          title="Favorite"
+          aria-label="Favorite"
+        >${isSaved ? "♥" : "♡"}</button>
+      </div>
+    </div>
 
-  const category = document.createElement("p");
-  category.textContent = w.category;
+    <div class="card-info">
+      <div class="card-title">${title}</div>
+      <div class="card-sub">
+        ${escapeHTML(item.credit || "Online image")}<br>
+        लाइसेंस: ${escapeHTML(item.license || "स्रोत पर जाँचें")}
+      </div>
+      <div class="card-footer">
+        <a href="${pageUrl}" target="_blank" rel="noopener noreferrer">
+          स्रोत
+        </a>
+        <a class="download" href="${full}" target="_blank"
+           rel="noopener noreferrer">
+          खोलें / डाउनलोड
+        </a>
+      </div>
+    </div>
+  `;
 
-  const link = document.createElement("a");
-  link.className = "download";
-  link.href = w.image;
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "↓ डाउनलोड / खोलें";
+  const img = card.querySelector("img");
 
-  info.append(title, category, link);
-  card.append(img, info);
+  img.addEventListener("error", () => {
+    img.alt = "तस्वीर लोड नहीं हो सकी";
+    img.style.minHeight = "120px";
+    img.style.padding = "20px";
+  });
+
+  card.querySelector(".favorite-btn").addEventListener("click", () => {
+    toggleFavorite(item);
+  });
+
   return card;
 }
 
-function render() {
-  const query = searchInput.value.trim().toLowerCase();
+function toggleFavorite(item) {
+  if (favorites.has(item.id)) {
+    favorites.delete(item.id);
+    showToast("Favorites से हटा दिया गया।");
+  } else {
+    favorites.add(item.id);
+    showToast("♥ Favorites में सेव हो गया!");
+  }
 
-  const filtered = wallpapers.filter(w => {
-    const matchesCategory =
-      selectedCategory === "All" ||
-      w.category === selectedCategory;
+  saveFavorites();
 
-    const matchesQuery =
-      (w.title + " " + w.category).toLowerCase().includes(query);
-
-    return matchesCategory && matchesQuery;
+  document.querySelectorAll(".card").forEach(card => {
+    if (card.dataset.id === item.id) {
+      const button = card.querySelector(".favorite-btn");
+      if (button) {
+        const saved = favorites.has(item.id);
+        button.classList.toggle("saved", saved);
+        button.textContent = saved ? "♥" : "♡";
+      }
+    }
   });
 
-  grid.replaceChildren();
-
-  filtered.forEach((w, i) => {
-    grid.appendChild(makeCard(w, i));
-  });
-
-  empty.style.display = filtered.length ? "none" : "block";
-  count.textContent = filtered.length + " वॉलपेपर";
+  if (viewMode === "favorites") renderFavorites();
 }
 
-document.getElementById("categories").addEventListener("click", e => {
-  const btn = e.target.closest("button[data-cat]");
-  if (!btn) return;
+function renderAllResults() {
+  gallery.replaceChildren();
 
-  selectedCategory = btn.dataset.cat;
-
-  document.querySelectorAll("#categories button").forEach(b => {
-    b.classList.toggle("active", b === btn);
+  currentResults.forEach(item => {
+    gallery.appendChild(makeCard(item));
   });
 
-  render();
-});
+  updateEmptyState();
+}
 
-document.getElementById("searchBtn").addEventListener("click", render);
-searchInput.addEventListener("input", render);
+function renderFavorites() {
+  gallery.replaceChildren();
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  const items = currentResults.concat(userPhotos);
+  const unique = new Map(items.map(item => [item.id, item]));
 
-document.getElementById("fileInput").addEventListener("change", e => {
-  const files = Array.from(e.target.files || []);
-  const status = document.getElementById("uploadStatus");
+  [...favorites].forEach(id => {
+    const item = unique.get(id);
 
-  if (!files.length) return;
-
-  const images = files.filter(f => f.type.startsWith("image/"));
-
-  if (!images.length) {
-    status.textContent = "कृपया फोटो फ़ाइल चुनें।";
-    return;
-  }
-
-  if (images.length > 10) {
-    status.textContent = "एक बार में अधिकतम 10 फोटो चुनें।";
-    return;
-  }
-
-  let added = 0;
-
-  images.forEach(file => {
-    if (file.size > 8 * 1024 * 1024) return;
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      wallpapers.push({
-        title: file.name.replace(/\.[^.]+$/, ""),
-        category: "My Uploads",
-        image: reader.result
-      });
-
-      added++;
-      selectedCategory = "My Uploads";
-
-      document.querySelectorAll("#categories button").forEach(b => {
-        b.classList.toggle("active", b.dataset.cat === selectedCategory);
-      });
-
-      render();
-      status.textContent =
-        added + " फोटो इस पेज में जोड़ी गई। सार्वजनिक वेबसाइट पर अपलोड नहीं हुई।";
-    };
-
-    reader.readAsDataURL(file);
+    if (item) {
+      gallery.appendChild(makeCard(item));
+    } else if (id.startsWith("commons-")) {
+      // अगर तस्वीर अभी वर्तमान परिणामों में नहीं है,
+      // तो उसे अगले खोज परिणामों में मिलने पर दिखाया जाएगा।
+    }
   });
 
-  if (images.some(f => f.size > 8 * 1024 * 1024)) {
-    status.textContent = "8 MB से बड़ी फोटो छोड़ दी गई।";
+  updateEmptyState();
+
+  if (gallery.children.length === 0) {
+    setStatus("अभी कोई सेव की गई तस्वीर उपलब्ध नहीं है।");
+  } else {
+    setStatus("तुम्हारी सेव की गई तस्वीरें।");
   }
+}
 
-  e.target.value = "";
-});
+function renderMyPhotos() {
+  gallery.replaceChildren();
 
-render();
-</script>
-</body>
-  </html>
+  userPhotos.forEach(item => {
+    gallery.appendChild(makeCard(item));
+  });
+
+  updateEmptyState();
+}
+
+async function loadWallpapers(reset = false) {
+  if (loading) return;
+
+  if (viewMode !== "all") {
+    setMode
